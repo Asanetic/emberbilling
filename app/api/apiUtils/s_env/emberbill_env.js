@@ -9,8 +9,9 @@ const mosyDbConfig = {
   production: {
     DB_HOST: '127.0.0.1',
     DB_USER: 'nextadmin',
-    DB_PASS: 'nextadmin001',
-    DB_NAME: 'emberbilling',
+    DB_PASS: 'UltraSecurePass123!',
+    DB_NAME: 'emberbilling'
+    
   }
 };
 
