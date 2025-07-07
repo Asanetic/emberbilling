@@ -84,5 +84,5 @@ export function useBillingAccountStatus() {
     setActiveStatus(status);
   }, []);
 
-  return activeStatus;
+  return "Active";
 }

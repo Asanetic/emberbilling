@@ -17,9 +17,9 @@ export function FloatingUpgradeButton() {
   }, []);
 
   // Still loading from localStorage? Don't render anything yet.
-  if (activeStatus === null) return null;
+  //if (activeStatus === null) return null;
 
-  if (activeStatus === "Active") return null;
+  //if (activeStatus === "Active") return null;
 
   return (
     <div style={floatingStyle}>
