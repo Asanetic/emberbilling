@@ -5,7 +5,7 @@ export function withCors(data, status = 200) {
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*', // or your domain
-        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS, GET',
         'Access-Control-Allow-Headers': 'Content-Type, Authorization',
       },
     });
