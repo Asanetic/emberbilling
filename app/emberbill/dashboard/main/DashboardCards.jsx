@@ -9,6 +9,7 @@ const defaultCardData = [
     percentage: '+15%',
     icon: "FaUsers",
   },
+  
   {
     title: 'Deposits',
     value: 'KES 235,000',

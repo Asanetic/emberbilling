@@ -2,8 +2,6 @@ import { Suspense } from 'react';
 
 import DashboardHolder from './DashboardHolder';
 
-import { mosyUrlParam } from '@/app/MosyUtils/hiveUtils';
-
 export async function generateMetadata() {
   const mosyTitle = "Overview dashboard"//searchParams?.mosyTitle || "Projects";
 
