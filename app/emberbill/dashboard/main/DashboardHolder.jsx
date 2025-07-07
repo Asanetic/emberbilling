@@ -12,6 +12,7 @@ import SiteListProjectsList from '../../sites/uiControl/SiteListProjectsList';
 
 import { InteprateSiteListProjectsEvent } from '../../sites/dataControl/SiteListProjectsRequestHandler';
 
+
 export default function DashboardHolder() {
   const [chartData, setChartData] = useState([]);
   const [cardData, setCardData] = useState([]);

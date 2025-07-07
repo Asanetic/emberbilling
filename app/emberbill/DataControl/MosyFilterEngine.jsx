@@ -10,6 +10,7 @@ export function MosyWhereBuilder(cols = [], keyword = "") {
   return `(${conditions.join(" OR ")})`;
 }
 
+
 export function ClientMMres(str) {
   if (typeof str !== 'string') return str;
 
