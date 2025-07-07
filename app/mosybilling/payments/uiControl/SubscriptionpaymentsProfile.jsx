@@ -620,10 +620,7 @@ export default function SubscriptionpaymentsProfile({ dataIn = {}, dataOut = {} 
       
       />)}
       {/* snack notifications -- */}
-      
-      
-      <DynamicModalProvider />
-      
+            
       {/* ================== End Feature Section========================== ------*/}
     </div>
     
