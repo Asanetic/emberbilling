@@ -1,3 +1,4 @@
+import { corsHeaders } from "../../../apiUtils/dataControl/cors";
 import {
     base64Encode,
     mosyCountRows,
@@ -6,7 +7,15 @@ import {
     mosySqlInsert,
     mosySqlUpdate
   } from "../../../apiUtils/dataControl/dataUtils";
+import { withCors } from "../../../apiUtils/dataControl/withCors";
   
+  export async function OPTIONS() {
+    return new Response(null, {
+      status: 204,
+      headers: corsHeaders,
+    });
+  }
+
   export async function POST(request) {
     try {
       const body = await request.json();
@@ -76,8 +85,8 @@ import {
         q: base64Encode(`where account_no='${accId}'`),
         tbl: "billing_account"
       });
-  
-      return Response.json({
+
+      const response = {
         status: 'success',
         message:
           activestatus === "Active"
@@ -88,14 +97,15 @@ import {
         expected: planAmt,
         activeStatus: activestatus,
         ...accResult,
-      });
+      };
+
+      return withCors(response)
   
     } catch (err) {
       console.error('POST /myaccount failed:', err);
-      return Response.json(
-        { status: 'error', message: err.message },
-        { status: 500 }
-      );
+    
+      return withCors({ status: 'error', message: err.message }, 500);
+
     }
   }
   
