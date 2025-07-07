@@ -1,6 +1,13 @@
-
 //utils 
 import { mosySqlInsert, mosySqlUpdate, base64Decode, mosyFlexSelect, mosyUploadFile, mosyDeleteFile, magicRandomStr, mosyQuickSel } from '../../../apiUtils/dataControl/dataUtils';
+import { withCors } from '../../../apiUtils/dataControl/withCors';
+
+  export async function OPTIONS() {
+    return new Response(null, {
+      status: 204,
+      headers: corsHeaders,
+    });
+  }
 
 export async function GET(request) {
   try {
@@ -28,31 +35,21 @@ export async function GET(request) {
         plan_type: plan.plan_type || 'Active', // optional highlight key
       }));
   
-      return Response.json({
-         status: 'success', 
-         data: formattedPlans,
-         summary : appDetails?.pricing_page_message || ""
+      return withCors({
+        status: 'success', 
+        data: formattedPlans,
+        summary : appDetails?.pricing_page_message || ""
 
-        });
+       })
     } catch (error) {
       console.error('Error fetching plans:', error);
-      return Response.json({ status: 'error', message: 'Failed to fetch plans' }, { status: 500 });
+      return withCors({ status: 'error', message: 'Failed to fetch plans' }, 500 );
     }
-
-
-    return Response.json(
-      {status : `200`,
-       data : appPlans 
-      }
-    )
 
 
   } catch (err) {
     console.error('GET Subscriptionplans failed:', err);
-    return Response.json(
-      { status: 'error', message: err.message },
-      { status: 500 }
-    );
+    return withCors({ status: 'error', message: err.message }, 500);
   }
 }
 
