@@ -8,9 +8,7 @@ import { MosySpace, MosyTitleTag } from '../../UiControl/componentControl';
 
 import { mosyGetData,  } from '../../../MosyUtils/hiveUtils';
 import { MosyNotify , closeMosyModal } from '../../../MosyUtils/ActionModals';
-import SiteListProjectsList from '../../sites/uiControl/SiteListProjectsList';
 
-import { InteprateSiteListProjectsEvent } from '../../sites/dataControl/SiteListProjectsRequestHandler';
 
 
 export default function DashboardHolder() {
@@ -49,13 +47,6 @@ export default function DashboardHolder() {
       </div>
       <MosySpace spaceClass="p-2" />
       <MosyTitleTag title="Recent sites" />
-      
-      <SiteListProjectsList dataIn={{
-         showDataControlSections : false,    
-         customProfilePath: "../sites/profile"
-      }}
-      
-      dataOut={{setChildDataOut : InteprateSiteListProjectsEvent}}/>
 
     </div>
     </>
