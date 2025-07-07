@@ -131,7 +131,7 @@ export async function submitMpesaPayment({ amount, planId, phone }) {
       const responseText = await res.text(); // or use .json() if your PHP returns JSON
       //MosyNotify({message:"Request sent, kindly check your phone",icon:"phone", id:"topmost"})
       
-       MosyCard(<div className="col-md-12 text-center h4 text-success p-0 m-0 "> <i className="fa fa-spinner fa-spin"></i> Waiting for transaction </div>,<MpesaOrderConfirmation orderNo={planId} accName={`Jeremiah`} planAmount={amount} />, false, "modal1", "mosycard_50")
+       MosyCard(<div className="col-md-12 text-center h4 text-success p-0 m-0 "> <i className="fa fa-spinner fa-spin"></i> Waiting for transaction </div>,<MpesaOrderConfirmation orderNo={user_id} accName={`Jeremiah`} planAmount={amount} />, false, "modal1", "mosycard_50")
 
       //console.log('Payment Response:', responseText);
 
