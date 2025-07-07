@@ -1,4 +1,5 @@
 //utils 
+import { corsHeaders } from '../../../apiUtils/dataControl/cors';
 import { mosySqlInsert, mosySqlUpdate, base64Decode, mosyFlexSelect, mosyUploadFile, mosyDeleteFile, magicRandomStr, mosyQuickSel } from '../../../apiUtils/dataControl/dataUtils';
 import { withCors } from '../../../apiUtils/dataControl/withCors';
 
